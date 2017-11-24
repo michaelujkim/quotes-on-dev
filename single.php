@@ -14,11 +14,15 @@ get_header(); ?>
 
 			<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-			<?php the_post_navigation(); ?>
+		
 
 		<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+					<?php esc_html( 'Primary Menu' ); ?></button>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					<p class="brought-to-by">Brought to you by <span class="academy-link"><a href="https://redacademy.com/"> Red Academy<a></span></p>
+				</nav>
 <?php get_footer(); ?>

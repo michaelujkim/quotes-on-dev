@@ -120,23 +120,28 @@ margin-bottom:3px;
 			margin-right:15%;
 			margin-left:15%;
 		}
+		.site-content{
+			position: relative;
+		}
+		.site-content::before{
+			content: "\f10d";
+			left: -175px;
+			
+		}
 
-		main::before{
-			font-family: "FontAwesome";
-			content: "\e610";
-			color:#f16822;
-			text-align: center;
-			display: block;
-			width:100px;
+		.site-content::after{
+
+			content: "\f10e";
+			right: -175px;
 		}
-		main::after{
-			content: "\f015";
-			content: "\e610";
-			color:#f16822;
-			text-align: center;
-			display: block;
-			width:100px;
-		}
+		.site-content::before, .site-content::after {
+			color: #0c0;
+			font-family: FontAwesome;
+			font-size: 125px;
+			line-height: 125px;
+			position: absolute;
+			top: 0;
+	}
 		.content-area{
 			display:flex;
 		}
@@ -166,5 +171,14 @@ margin-top:0px;
 	}
 
 
+
+}
+
+.academy-link{
+	padding-left: 5px;
+}
+
+.brought-to-by{
+	padding-left:10px;
 
 }

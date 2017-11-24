@@ -195,11 +195,6 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
 legend {
   border: 0;
   padding: 0; }
@@ -387,7 +382,6 @@ input[type="submit"] {
   input[type="reset"]:focus,
   input[type="submit"]:active,
   input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb;
     -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
             box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
 
@@ -666,20 +660,21 @@ body {
     width: 70%;
     margin-right: 15%;
     margin-left: 15%; }
-  main::before {
-    font-family: "FontAwesome";
-    content: "\e610";
-    color: #f16822;
-    text-align: center;
-    display: block;
-    width: 100px; }
-  main::after {
-    content: "\f015";
-    content: "\e610";
-    color: #f16822;
-    text-align: center;
-    display: block;
-    width: 100px; }
+  .site-content {
+    position: relative; }
+  .site-content::before {
+    content: "\f10d";
+    left: -175px; }
+  .site-content::after {
+    content: "\f10e";
+    right: -175px; }
+  .site-content::before, .site-content::after {
+    color: #0c0;
+    font-family: FontAwesome;
+    font-size: 125px;
+    line-height: 125px;
+    position: absolute;
+    top: 0; }
   .content-area {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -705,6 +700,12 @@ body {
             align-items: center; }
     .main-navigation p {
       margin-top: 0px; } }
+
+.academy-link {
+  padding-left: 5px; }
+
+.brought-to-by {
+  padding-left: 10px; }
 
 /*--------------------------------------------------------------
 # Media

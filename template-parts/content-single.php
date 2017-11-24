@@ -18,5 +18,7 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-	</div><!-- .entry-content -->
+	</div>
+	<!-- .entry-content -->
 </article><!-- #post-## -->
+<button type="button" id="new-quote-button">Show me another</a></button>

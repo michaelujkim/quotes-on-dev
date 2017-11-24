@@ -33,11 +33,19 @@ $('#new-quote-button').on('click', function(event) {
   var output = '<span class="quote-title">';
   output += data[0].excerpt.rendered;
   output += '</span>';
+  var output2 = '<h2 class="quote-author"> - '
+  output2 += data[0].title.rendered;
+  output2 += '</h2>';
+  var output3 = '<p class="quote-source">'
+  output3 += data[0]._qod_quote_source_url;
+  output3 += '</p>';
+
+
 
     $('.hentry').append( 
       output,
-      data[0].title.rendered,
-      data[0]._qod_quote_source_url
+      output2,
+      output3
       
    );
 
