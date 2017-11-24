@@ -6,6 +6,7 @@
 
 a {
 	color: $color__link;
+	text-decoration: none;
 
 	&:visited {
 		color: $color__link-visited;
@@ -33,7 +34,7 @@ a {
 	width: 100%;
 
 	ul {
-		display: none;
+		display: block;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -98,7 +99,7 @@ a {
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+	display: none;
 }
 
 @media screen and (min-width: 768px) {

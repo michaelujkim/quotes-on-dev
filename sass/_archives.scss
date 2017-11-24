@@ -1,0 +1,15 @@
+.clearfix{
+
+  ul{
+
+    display:flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-decoration: none;
+    
+    li{
+      padding-left: 20px;
+      text-decoration: none;
+    }
+  }
+}

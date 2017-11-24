@@ -57,8 +57,25 @@ add_filter( 'stylesheet_uri', 'qod_minified_css', 10, 2 );
  */
 function qod_scripts() {
 	wp_enqueue_style( 'qod-style', get_stylesheet_uri() );
+	wp_enqueue_style('font-awesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+
+
+
+	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'qod-skip-link-focus-fix', get_template_directory_uri() . '/build/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+
+
+	if(function_exists('rest_url')){
+		wp_enqueue_script('qod_api', get_template_directory_uri() . '/build/js/api.min.js', array(), false, true);
+		wp_localize_script('qod_api', 'api_vars', array(
+			'root_url'   => esc_url_raw( rest_url() ),
+			'home_url'   => esc_url_raw( home_url() ),
+			'nonce'      => wp_create_nonce( 'wp_rest' ),
+			'success'    => 'Congratulations, you are a special snowflake',
+			'fail'       => 'Siggidy Say Whaaaaaaaat?'
+		));
+	}
 }
 add_action( 'wp_enqueue_scripts', 'qod_scripts' );
 
@@ -81,3 +98,16 @@ require get_template_directory() . '/inc/metaboxes.php';
  * Custom WP API modifications.
  */
 require get_template_directory() . '/inc/api.php';
+
+
+function red_scripts() {
+	$script_url = get_template_directory_uri() . '/scripts.js';
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'red_comments', $script_url, array( 'jquery' ), false, true );
+ wp_localize_script( 'red_comments', 'red_vars', array(
+		 'rest_url' => esc_url_raw( rest_url() ),
+		 'wpapi_nonce' => wp_create_nonce( 'wp_rest' ),
+		 'post_id' => get_the_ID()
+ ) );
+}
+add_action( 'wp_enqueue_scripts', 'red_scripts' );
