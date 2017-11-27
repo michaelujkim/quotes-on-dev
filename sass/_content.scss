@@ -63,7 +63,7 @@ body{
 	
 	
 	
-	.main-navigation ul ul li {
+	.main-navigation ul li:last-of-type {
 	border-right: none;
 	}
 
@@ -106,13 +106,15 @@ margin-bottom:3px;
 }
 
 		
-			
+.main-navigation ul li:last-of-type {
+	border-right: 1px solid white;
+	}		
 
 
 		
 	}
 
-
+	
 
 	@media (min-width: 1000px) {
 		body{
